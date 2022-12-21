@@ -1,0 +1,31 @@
+.app {
+  header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: gray;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    min-height: 305px;
+
+    aside,
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    aside {
+      background-color: darkgray;
+    }
+  }
+}

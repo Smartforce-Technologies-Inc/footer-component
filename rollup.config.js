@@ -44,7 +44,7 @@ export default defineConfig([
       commonjs(),
       injectProcessEnv(
         {
-          NODE_ENV: process.env.BUILD
+          FOOTER_BUILD: process.env.BUILD
         },
         {
           exclude: '**/*.scss'

@@ -1,8 +1,9 @@
 import { FooterConfig } from '../Models';
 
 export const getConfig = (): Promise<FooterConfig> => {
+  console.log(process.env);
   const url =
-    process.env.NODE_ENV == 'production'
+    process.env.FOOTER_BUILD == 'production'
       ? 'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json'
       : 'https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json';
 

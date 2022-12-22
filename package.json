@@ -21,7 +21,7 @@
     "build": "npm run clean && rollup -c --environment BUILD:production",
     "build_dev": "npm run clean && rollup -c --environment BUILD:development",
     "prepare": "npm run build",
-    "link": "npm link && npm link ./example-app/node_modules/react",
+    "link": "npm link --ignore-scripts && npm link ./example-app/node_modules/react",
     "serve": "npm run build_dev && npm run link && cd example-app && npm run serve"
   },
   "devDependencies": {

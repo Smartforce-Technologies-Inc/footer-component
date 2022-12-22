@@ -42,10 +42,10 @@ export default defineConfig([
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      process.env.BUILD == 'development'
+      process.env.DEVELOPMENT
         ? injectProcessEnv(
             {
-              FOOTER_BUILD: process.env.BUILD
+              DEVELOPMENT: process.env.DEVELOPMENT
             },
             {
               exclude: '**/*.scss'

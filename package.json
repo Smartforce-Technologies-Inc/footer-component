@@ -18,8 +18,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean && rollup -c --environment BUILD:production",
-    "build_dev": "npm run clean && rollup -c --environment BUILD:development",
+    "build": "npm run clean && rollup -c",
+    "build_dev": "npm run clean && rollup -c --environment DEVELOPMENT",
     "prepare": "npm run build",
     "link": "npm link --ignore-scripts && npm link ./example-app/node_modules/react",
     "serve": "npm run build_dev && npm run link && cd example-app && npm run serve"

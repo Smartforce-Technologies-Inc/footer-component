@@ -8,6 +8,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "files": [
     "dist"
   ],
@@ -15,9 +16,11 @@
     "node": ">=12"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c --environment BUILD:production",
-    "build_dev": "rollup -c --environment BUILD:development",
+    "build": "npm run clean && rollup -c --environment BUILD:production",
+    "build_dev": "npm run clean && rollup -c --environment BUILD:development",
+    "prepare": "npm run build",
     "link": "npm link && npm link ./example-app/node_modules/react",
     "serve": "npm run build_dev && npm run link && cd example-app && npm run serve"
   },

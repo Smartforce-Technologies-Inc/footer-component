@@ -42,14 +42,16 @@ export default defineConfig([
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      injectProcessEnv(
-        {
-          FOOTER_BUILD: process.env.BUILD
-        },
-        {
-          exclude: '**/*.scss'
-        }
-      ),
+      process.env.BUILD == 'development'
+        ? injectProcessEnv(
+            {
+              FOOTER_BUILD: process.env.BUILD
+            },
+            {
+              exclude: '**/*.scss'
+            }
+          )
+        : undefined,
       typescript(),
       styles({
         plugins: [autoprefixer()],

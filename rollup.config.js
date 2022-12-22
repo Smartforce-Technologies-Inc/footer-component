@@ -31,19 +31,19 @@ export default defineConfig([
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true
+        sourcemap: !isProduction
       },
       {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true
+        sourcemap: !isProduction
       }
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
       commonjs({ sourceMap: !isProduction }),
-      typescript(),
+      typescript({ sourceMap: !isProduction }),
       styles({
         plugins: [autoprefixer()],
         sourceMap: true,

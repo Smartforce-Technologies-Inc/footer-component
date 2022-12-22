@@ -11,7 +11,7 @@ export const App = () => {
         <aside>Aside</aside>
         <section>Body</section>
       </main>
-      <Footer />
+      <Footer url='https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json' />
     </div>
   );
 };

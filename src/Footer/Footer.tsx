@@ -6,19 +6,23 @@ import { FooterSkeleton } from './FooterSkeleton/FooterSkeleton';
 import { FooterConfig, Section } from './Models';
 import { getConfig } from './Service';
 
-export const Footer = (): React.ReactElement<{}> => {
+export interface FooterProps {
+  url?: string;
+}
+
+export const Footer = ({ url }: FooterProps): React.ReactElement<{}> => {
   const [config, setConfig] = useState<FooterConfig>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const init = async () => {
-      const config = await getConfig();
+      const config = await getConfig(url);
       setConfig(config);
       setIsLoading(false);
     };
 
     init();
-  }, []);
+  }, [url]);
 
   return (
     <Fragment>

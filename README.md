@@ -102,3 +102,4 @@ The Footer component to be used into the Smartforce Apps developed by The SmartF
 3. [Understanding modern web stack with react and typescript](https://dev.to/alexeagleson/understanding-the-modern-web-stack-webpack-devserver-react-typescript-4b9b)
 4. [Publishing a react component library to npm](https://blog.logrocket.com/the-complete-guide-to-publishing-a-react-package-to-npm/)
 5. [Rollup plugins list](https://github.com/rollup/awesome)
+6. [How to Bundle JavaScript With Rollup - Tutorial](https://www.learnwithjason.dev/blog/learn-rollup-js)

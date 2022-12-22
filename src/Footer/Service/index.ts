@@ -1,11 +1,10 @@
 import { FooterConfig } from '../Models';
 
 export const getConfig = (): Promise<FooterConfig> => {
-  // const url = process.env.DEVELOPMENT
-  //   ? 'https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json'
-  //   : 'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json';
   const url =
-    'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json';
+    process.env.BUILD === 'development'
+      ? 'https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json'
+      : 'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json';
 
   return fetch(url, {
     method: 'GET',

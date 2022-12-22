@@ -18,7 +18,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 // Minify our bundle and reduce the overall file size.
 import { terser } from 'rollup-plugin-terser';
 
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 
 const packageJson = require('./package.json');
 
@@ -54,6 +54,7 @@ export default defineConfig([
       }),
       replace({
         exclude: 'node_modules/**',
+        preventAssignment: true,
         'process.env.BUILD': JSON.stringify(process.env.BUILD || 'development')
       }),
       terser()

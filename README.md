@@ -68,9 +68,9 @@ The Footer component to be used into the Smartforce Apps developed by The SmartF
 
   - [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs)
 
-- Inject NODE_ENV environment variable
+- Tool for replace NODE_ENV variables into the app
 
-  - [rollup-plugin-inject-process-env](https://www.npmjs.com/package/rollup-plugin-inject-process-env)
+  - [@rollup/plugin-replace](https://www.npmjs.com/package/@rollup/plugin-replace)
 
 - Transpile typescript
 

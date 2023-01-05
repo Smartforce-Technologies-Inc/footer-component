@@ -18,10 +18,11 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 // Minify our bundle and reduce the overall file size.
 import { terser } from 'rollup-plugin-terser';
 
-// Inject environment variables to use into the app
-import injectProcessEnv from 'rollup-plugin-inject-process-env';
+import replace from '@rollup/plugin-replace';
 
 const packageJson = require('./package.json');
+
+const isProduction = process.env.BUILD === 'production';
 
 export default defineConfig([
   {
@@ -30,27 +31,19 @@ export default defineConfig([
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true
+        sourcemap: !isProduction
       },
       {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true
+        sourcemap: !isProduction
       }
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
-      commonjs(),
-      injectProcessEnv(
-        {
-          NODE_ENV: process.env.BUILD
-        },
-        {
-          exclude: '**/*.scss'
-        }
-      ),
-      typescript(),
+      commonjs({ sourceMap: !isProduction }),
+      typescript({ sourceMap: !isProduction }),
       styles({
         plugins: [autoprefixer()],
         sourceMap: true,
@@ -58,6 +51,11 @@ export default defineConfig([
         minimize: true,
         modules: true,
         autoModules: true
+      }),
+      replace({
+        exclude: 'node_modules/**',
+        preventAssignment: true,
+        'process.env.BUILD': JSON.stringify(process.env.BUILD || 'development')
       }),
       terser()
     ],

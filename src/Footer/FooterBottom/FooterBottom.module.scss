@@ -38,6 +38,18 @@
     }
   }
 
+  &.nightMode {
+    a {
+      color: #808080;
+    }
+
+    .bottomLinks {
+      > span {
+        color: #808080;
+      }
+    }
+  }
+
   @media screen and (min-width: 768px) {
     padding: 8px 0;
     grid-template-areas:

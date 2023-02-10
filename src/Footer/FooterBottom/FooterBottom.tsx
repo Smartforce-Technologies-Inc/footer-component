@@ -5,13 +5,19 @@ import { BottomConfig, Link } from '../Models';
 
 export interface FooterBottomProps {
   config: BottomConfig;
+  isNightMode: boolean;
 }
 
 export const FooterBottom = ({
-  config
+  config,
+  isNightMode
 }: FooterBottomProps): React.ReactElement<FooterBottomProps> => {
   return (
-    <div className={styles.footerBottom}>
+    <div
+      className={`${styles.footerBottom} ${
+        isNightMode ? styles.nightMode : ''
+      }`}
+    >
       <div className={styles.region}>
         <FooterLink link={config.region} />
       </div>

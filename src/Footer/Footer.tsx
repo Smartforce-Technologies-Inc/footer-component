@@ -31,7 +31,9 @@ export const Footer = ({
       {isLoading && <FooterSkeleton />}
 
       {!isLoading && config && (
-        <div className={`${styles.footer} ${styles.nightMode}`}>
+        <div
+          className={`${styles.footer} ${isNightMode ? styles.nightMode : ''}`}
+        >
           <div className={styles.sections}>
             {config.sections.map((section: Section) => (
               <FooterSection key={section.title} section={section} />

@@ -8,23 +8,25 @@ import { getConfig } from './Service';
 
 export interface FooterProps {
   isNightMode?: boolean;
+  url?: string;
 }
 
 export const Footer = ({
+  url,
   isNightMode = false
-}: FooterProps): React.ReactElement<FooterProps> => {
+}: FooterProps): React.ReactElement<{}> => {
   const [config, setConfig] = useState<FooterConfig>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const init = async () => {
-      const config = await getConfig();
+      const config = await getConfig(url);
       setConfig(config);
       setIsLoading(false);
     };
 
     init();
-  }, []);
+  }, [url]);
 
   return (
     <Fragment>

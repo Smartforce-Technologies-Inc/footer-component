@@ -19,7 +19,10 @@ export const App = () => {
         <aside>Aside</aside>
         <section>Body</section>
       </main>
-      <Footer isNightMode={isNightMode} />
+      <Footer
+        url='https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json'
+        isNightMode={isNightMode}
+      />
     </div>
   );
 };

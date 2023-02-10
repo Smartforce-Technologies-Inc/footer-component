@@ -1,12 +1,10 @@
 import { FooterConfig } from '../Models';
 
-export const getConfig = (): Promise<FooterConfig> => {
-  const url =
-    process.env.NODE_ENV == 'production'
-      ? 'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json'
-      : 'https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json';
+const DEFAULT_URL =
+  'https://smartforceprodcdn.azureedge.us/smartforce/common/footer.json';
 
-  return fetch(url, {
+export const getConfig = (url?: string): Promise<FooterConfig> => {
+  return fetch(url || DEFAULT_URL, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

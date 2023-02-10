@@ -68,9 +68,9 @@ The Footer component to be used into the Smartforce Apps developed by The SmartF
 
   - [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs)
 
-- Inject NODE_ENV environment variable
+- Tool for replace NODE_ENV variables into the app
 
-  - [rollup-plugin-inject-process-env](https://www.npmjs.com/package/rollup-plugin-inject-process-env)
+  - [@rollup/plugin-replace](https://www.npmjs.com/package/@rollup/plugin-replace)
 
 - Transpile typescript
 
@@ -102,3 +102,4 @@ The Footer component to be used into the Smartforce Apps developed by The SmartF
 3. [Understanding modern web stack with react and typescript](https://dev.to/alexeagleson/understanding-the-modern-web-stack-webpack-devserver-react-typescript-4b9b)
 4. [Publishing a react component library to npm](https://blog.logrocket.com/the-complete-guide-to-publishing-a-react-package-to-npm/)
 5. [Rollup plugins list](https://github.com/rollup/awesome)
+6. [How to Bundle JavaScript With Rollup - Tutorial](https://www.learnwithjason.dev/blog/learn-rollup-js)

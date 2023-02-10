@@ -18,6 +18,14 @@
     border-top: 1px solid #e5e5e5;
   }
 
+  &.nightMode {
+    background-color: #1f1f1f;
+
+    > hr {
+      border-color: #4d4d4d;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     padding: 0 117px;
 

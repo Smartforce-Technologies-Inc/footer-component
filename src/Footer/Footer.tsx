@@ -6,7 +6,13 @@ import { FooterSkeleton } from './FooterSkeleton/FooterSkeleton';
 import { FooterConfig, Section } from './Models';
 import { getConfig } from './Service';
 
-export const Footer = (): React.ReactElement<{}> => {
+export interface FooterProps {
+  isNightMode?: boolean;
+}
+
+export const Footer = ({
+  isNightMode = false
+}: FooterProps): React.ReactElement<FooterProps> => {
   const [config, setConfig] = useState<FooterConfig>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -25,7 +31,7 @@ export const Footer = (): React.ReactElement<{}> => {
       {isLoading && <FooterSkeleton />}
 
       {!isLoading && config && (
-        <div className={styles.footer}>
+        <div className={`${styles.footer} ${styles.nightMode}`}>
           <div className={styles.sections}>
             {config.sections.map((section: Section) => (
               <FooterSection key={section.title} section={section} />
@@ -34,7 +40,7 @@ export const Footer = (): React.ReactElement<{}> => {
 
           <hr />
 
-          <FooterBottom config={config.bottom_line} />
+          <FooterBottom isNightMode={isNightMode} config={config.bottom_line} />
         </div>
       )}
     </Fragment>

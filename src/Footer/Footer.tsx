@@ -7,16 +7,17 @@ import { FooterConfig, Section } from './Models';
 import { getConfig } from './Service';
 
 export interface FooterProps {
-  isNightMode?: boolean;
+  theme?: 'day' | 'night';
   url?: string;
 }
 
 export const Footer = ({
   url,
-  isNightMode = false
+  theme = 'day'
 }: FooterProps): React.ReactElement<{}> => {
   const [config, setConfig] = useState<FooterConfig>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const isNightMode: boolean = theme === 'night';
 
   useEffect(() => {
     const init = async () => {

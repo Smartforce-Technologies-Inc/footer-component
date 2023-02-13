@@ -2,22 +2,19 @@ import React, { Fragment } from 'react';
 import styles from './FooterBottom.module.scss';
 import { FooterLink } from '../FooterLink/FooterLink';
 import { BottomConfig, Link } from '../Models';
+import { ThemeType } from '../Footer';
 
 export interface FooterBottomProps {
   config: BottomConfig;
-  isNightMode: boolean;
+  theme: ThemeType;
 }
 
 export const FooterBottom = ({
   config,
-  isNightMode
+  theme
 }: FooterBottomProps): React.ReactElement<FooterBottomProps> => {
   return (
-    <div
-      className={`${styles.footerBottom} ${
-        isNightMode ? styles.nightMode : ''
-      }`}
-    >
+    <div className={`${styles.footerBottom} ${styles[theme]}`}>
       <div className={styles.region}>
         <FooterLink link={config.region} />
       </div>

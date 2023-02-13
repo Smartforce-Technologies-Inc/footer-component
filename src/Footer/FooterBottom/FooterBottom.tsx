@@ -2,16 +2,19 @@ import React, { Fragment } from 'react';
 import styles from './FooterBottom.module.scss';
 import { FooterLink } from '../FooterLink/FooterLink';
 import { BottomConfig, Link } from '../Models';
+import { ThemeType } from '../Footer';
 
 export interface FooterBottomProps {
   config: BottomConfig;
+  theme: ThemeType;
 }
 
 export const FooterBottom = ({
-  config
+  config,
+  theme
 }: FooterBottomProps): React.ReactElement<FooterBottomProps> => {
   return (
-    <div className={styles.footerBottom}>
+    <div className={`${styles.footerBottom} ${styles[theme]}`}>
       <div className={styles.region}>
         <FooterLink link={config.region} />
       </div>

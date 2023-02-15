@@ -13,6 +13,10 @@ export const FooterBottom = ({
   config,
   theme
 }: FooterBottomProps): React.ReactElement<FooterBottomProps> => {
+  const copyrightLink: Link = {
+    href: config.copyright.href,
+    label: `© ${new Date().getFullYear()} ${config.copyright.label}`
+  };
   return (
     <div className={`${styles.footerBottom} ${styles[theme]}`}>
       <div className={styles.region}>
@@ -29,7 +33,7 @@ export const FooterBottom = ({
       </div>
 
       <div className={styles.copyright}>
-        <FooterLink link={config.copyright} />
+        <FooterLink link={copyrightLink} />
       </div>
     </div>
   );

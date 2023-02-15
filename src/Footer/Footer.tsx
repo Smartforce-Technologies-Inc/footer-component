@@ -9,8 +9,8 @@ import { getConfig } from './Service';
 export type ThemeType = 'day' | 'night';
 
 export interface FooterProps {
+  url: string;
   theme?: ThemeType;
-  url?: string;
 }
 
 export const Footer = ({

@@ -54,6 +54,18 @@
     border-top: 1px solid #e5e5e5;
   }
 
+  &.night {
+    background-color: #1f1f1f;
+
+    > hr {
+      border-color: #4d4d4d;
+    }
+
+    .rect {
+      background-color: rgba(242, 242, 242, 0.11);
+    }
+  }
+
   @media screen and (min-width: 768px) {
     padding-top: 0px;
     padding-bottom: 24px;
@@ -67,6 +79,10 @@
 
     > hr {
       display: block;
+    }
+
+    .bottom {
+      padding: 8px 0;
     }
   }
 

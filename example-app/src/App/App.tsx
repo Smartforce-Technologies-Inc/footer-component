@@ -6,7 +6,7 @@ export const App = () => {
   const [isNightMode, setIsNightMode] = React.useState<boolean>(false);
 
   const onChangeModeClick = () => {
-    setIsNightMode(!isNightMode);
+    setIsNightMode((mode: boolean) => !mode);
   };
 
   return (

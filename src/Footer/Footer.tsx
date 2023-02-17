@@ -32,10 +32,14 @@ export const Footer = ({
 
   return (
     <Fragment>
-      {isLoading && <FooterSkeleton />}
+      {isLoading && <FooterSkeleton theme={theme} />}
 
       {!isLoading && config && (
-        <div className={`${styles.footer} ${styles[theme]}`}>
+        <div
+          className={`${styles.footer} ${
+            theme === 'night' ? styles.night : ''
+          }`}
+        >
           <div className={styles.sections}>
             {config.sections.map((section: Section) => (
               <FooterSection key={section.title} section={section} />

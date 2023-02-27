@@ -2,16 +2,23 @@ import React, { Fragment } from 'react';
 import styles from './FooterBottom.module.scss';
 import { FooterLink } from '../FooterLink/FooterLink';
 import { BottomConfig, Link } from '../Models';
+import { ThemeType } from '../Footer';
 
 export interface FooterBottomProps {
   config: BottomConfig;
+  theme: ThemeType;
 }
 
 export const FooterBottom = ({
-  config
+  config,
+  theme
 }: FooterBottomProps): React.ReactElement<FooterBottomProps> => {
+  const copyrightLink: Link = {
+    href: config.copyright.href,
+    label: `© ${new Date().getFullYear()} ${config.copyright.label}`
+  };
   return (
-    <div className={styles.footerBottom}>
+    <div className={`${styles.footerBottom} ${styles[theme]}`}>
       <div className={styles.region}>
         <FooterLink link={config.region} />
       </div>
@@ -26,7 +33,7 @@ export const FooterBottom = ({
       </div>
 
       <div className={styles.copyright}>
-        <FooterLink link={config.copyright} />
+        <FooterLink link={copyrightLink} />
       </div>
     </div>
   );

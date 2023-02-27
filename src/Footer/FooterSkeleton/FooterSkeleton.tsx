@@ -1,12 +1,23 @@
 import React from 'react';
 import styles from './FooterSkeleton.module.scss';
+import { ThemeType } from '../Footer';
 
 const SECTION_SIZE = 3;
 const LINKS_SIZE = 4;
 
-export const FooterSkeleton = (): React.ReactElement<{}> => {
+export interface FooterSkeletonProps {
+  theme: ThemeType;
+}
+
+export const FooterSkeleton = ({
+  theme
+}: FooterSkeletonProps): React.ReactElement<FooterSkeletonProps> => {
   return (
-    <div className={styles.footerSkeleton}>
+    <div
+      className={`${styles.footerSkeleton} ${
+        theme === 'night' ? styles.night : ''
+      }`}
+    >
       <div className={styles.sections}>
         {[...Array(SECTION_SIZE)].map((_n, i: number) => (
           <div key={`skeleton-section-${i}`} className={styles.section}>

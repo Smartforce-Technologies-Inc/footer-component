@@ -10,11 +10,13 @@ export type ThemeType = 'day' | 'night';
 
 export interface FooterProps {
   url: string;
+  showLinks?: boolean;
   theme?: ThemeType;
 }
 
 export const Footer = ({
   url,
+  showLinks = true,
   theme = 'day'
 }: FooterProps): React.ReactElement<{}> => {
   const [config, setConfig] = useState<FooterConfig>();
@@ -40,13 +42,17 @@ export const Footer = ({
             theme === 'night' ? styles.night : ''
           }`}
         >
-          <div className={styles.sections}>
-            {config.sections.map((section: Section) => (
-              <FooterSection key={section.title} section={section} />
-            ))}
-          </div>
+          {showLinks && (
+            <Fragment>
+              <div className={styles.sections}>
+                {config.sections.map((section: Section) => (
+                  <FooterSection key={section.title} section={section} />
+                ))}
+              </div>
 
-          <hr />
+              <hr />
+            </Fragment>
+          )}
 
           <FooterBottom theme={theme} config={config.bottom_line} />
         </div>

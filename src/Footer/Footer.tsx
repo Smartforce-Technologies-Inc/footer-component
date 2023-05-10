@@ -36,7 +36,9 @@ export const Footer = ({
 
   return (
     <Fragment>
-      {isLoading && <FooterSkeleton theme={theme} />}
+      {isLoading && (
+        <FooterSkeleton theme={theme} hideSections={hideSections} />
+      )}
 
       {!isLoading && config && (
         <div

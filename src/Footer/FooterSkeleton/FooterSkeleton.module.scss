@@ -20,16 +20,20 @@
     background-color: rgba(26, 26, 26, 0.11);
 
     &.rectBig {
-      height: 16px;
+      height: 24px;
       width: 70%;
     }
 
     &.rectMedium {
-      height: 14px;
+      height: 20px;
     }
 
     &.rectSmall {
-      height: 12px;
+      height: 16px;
+    }
+
+    &.rectBottom {
+      height: 68px;
     }
   }
 
@@ -68,12 +72,19 @@
 
   @media screen and (min-width: 768px) {
     padding-top: 0px;
-    padding-bottom: 24px;
     padding-right: 117px;
     padding-left: 117px;
+    padding-bottom: 0;
+
+    .rect {
+      &.rectBottom {
+        height: 41px;
+      }
+    }
 
     .sections {
-      padding-top: 42px;
+      padding-top: 72px;
+      padding-bottom: 72px;
       grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -94,6 +105,12 @@
   @media screen and (min-width: 1280px) {
     padding-right: 233px;
     padding-left: 233px;
+
+    .rect {
+      &.rectBottom {
+        height: 19px;
+      }
+    }
   }
 
   @media screen and (min-width: 1600px) {

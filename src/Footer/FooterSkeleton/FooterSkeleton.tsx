@@ -42,7 +42,7 @@ export const FooterSkeleton = ({
       )}
 
       <div className={styles.bottom}>
-        <div className={`${styles.rect} ${styles.rectSmall}`} />
+        <div className={`${styles.rect} ${styles.rectBottom}`} />
       </div>
     </div>
   );

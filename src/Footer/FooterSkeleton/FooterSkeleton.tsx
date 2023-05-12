@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styles from './FooterSkeleton.module.scss';
 import { ThemeType } from '../Footer';
+import { FooterSkeletonItem } from './FooterSkeletonItem/FooterSkeletonItem';
 
 const SECTION_SIZE = 3;
 const LINKS_SIZE = 4;
@@ -14,24 +15,20 @@ export const FooterSkeleton = ({
   theme,
   hideSections
 }: FooterSkeletonProps): React.ReactElement<FooterSkeletonProps> => {
+  const isNightTheme: boolean = theme === 'night';
   return (
     <div
-      className={`${styles.footerSkeleton} ${
-        theme === 'night' ? styles.night : ''
-      }`}
+      className={`${styles.footerSkeleton} ${isNightTheme ? styles.night : ''}`}
     >
       {!hideSections && (
         <Fragment>
           <div className={styles.sections}>
             {[...Array(SECTION_SIZE)].map((_n, i: number) => (
               <div key={`skeleton-section-${i}`} className={styles.section}>
-                <div className={`${styles.rect} ${styles.rectBig}`} />
+                <FooterSkeletonItem size='big' night={isNightTheme} />
 
                 {[...Array(LINKS_SIZE)].map((_n, j: number) => (
-                  <div
-                    key={`skeleton-link-${i}-${j}`}
-                    className={`${styles.rect} ${styles.rectMedium}`}
-                  />
+                  <FooterSkeletonItem size='medium' night={isNightTheme} />
                 ))}
               </div>
             ))}
@@ -42,7 +39,9 @@ export const FooterSkeleton = ({
       )}
 
       <div className={styles.bottom}>
-        <div className={`${styles.rect} ${styles.rectBottom}`} />
+        <FooterSkeletonItem size='small' night={isNightTheme} />
+        <FooterSkeletonItem size='small' night={isNightTheme} />
+        <FooterSkeletonItem size='small' night={isNightTheme} />
       </div>
     </div>
   );

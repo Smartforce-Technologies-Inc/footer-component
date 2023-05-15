@@ -31,7 +31,6 @@
       'region'
       'links'
       'copyright';
-    padding: 8px 0;
 
     :nth-child(1) {
       grid-area: region;
@@ -43,6 +42,10 @@
 
     :nth-child(3) {
       grid-area: copyright;
+    }
+
+    div {
+      height: 19px;
     }
   }
 
@@ -72,6 +75,7 @@
 
     .bottom {
       gap: 8px;
+      padding: 8px 0;
       grid-template-areas:
         'links links'
         'copyright region';

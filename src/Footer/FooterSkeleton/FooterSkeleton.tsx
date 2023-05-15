@@ -39,9 +39,9 @@ export const FooterSkeleton = ({
       )}
 
       <div className={styles.bottom}>
-        <FooterSkeletonItem size='small' night={isNightTheme} />
-        <FooterSkeletonItem size='small' night={isNightTheme} />
-        <FooterSkeletonItem size='small' night={isNightTheme} />
+        <FooterSkeletonItem size='medium' night={isNightTheme} />
+        <FooterSkeletonItem size='medium' night={isNightTheme} />
+        <FooterSkeletonItem size='medium' night={isNightTheme} />
       </div>
     </div>
   );

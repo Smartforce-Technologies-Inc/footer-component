@@ -25,10 +25,13 @@ export const FooterSkeleton = ({
           <div className={styles.sections}>
             {[...Array(SECTION_SIZE)].map((_n, i: number) => (
               <div key={`skeleton-section-${i}`} className={styles.section}>
-                <FooterSkeletonItem size='big' night={isNightTheme} />
+                <FooterSkeletonItem size='big' isNightTheme={isNightTheme} />
 
                 {[...Array(LINKS_SIZE)].map((_n, j: number) => (
-                  <FooterSkeletonItem size='medium' night={isNightTheme} />
+                  <FooterSkeletonItem
+                    size='medium'
+                    isNightTheme={isNightTheme}
+                  />
                 ))}
               </div>
             ))}
@@ -39,9 +42,9 @@ export const FooterSkeleton = ({
       )}
 
       <div className={styles.bottom}>
-        <FooterSkeletonItem size='medium' night={isNightTheme} />
-        <FooterSkeletonItem size='medium' night={isNightTheme} />
-        <FooterSkeletonItem size='medium' night={isNightTheme} />
+        <FooterSkeletonItem size='medium' isNightTheme={isNightTheme} />
+        <FooterSkeletonItem size='medium' isNightTheme={isNightTheme} />
+        <FooterSkeletonItem size='medium' isNightTheme={isNightTheme} />
       </div>
     </div>
   );

@@ -4,18 +4,18 @@ import styles from './FooterSkeletonItem.module.scss';
 type ItemSizeType = 'big' | 'medium' | 'small';
 
 export interface FooterSkeletonItemProps {
+  isNightTheme: boolean;
   size: ItemSizeType;
-  night: boolean;
 }
 
 export const FooterSkeletonItem = ({
-  size,
-  night
+  isNightTheme,
+  size
 }: FooterSkeletonItemProps): React.ReactElement<FooterSkeletonItemProps> => {
   return (
     <div
       className={`${styles.footerSkeletonItem} ${styles[size]} ${
-        night ? styles.night : ''
+        isNightTheme ? styles.night : ''
       }`}
     >
       <div className={`${styles.item} ${styles[size]}`}></div>

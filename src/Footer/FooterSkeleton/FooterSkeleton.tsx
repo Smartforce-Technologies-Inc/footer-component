@@ -25,10 +25,15 @@ export const FooterSkeleton = ({
           <div className={styles.sections}>
             {[...Array(SECTION_SIZE)].map((_n, i: number) => (
               <div key={`skeleton-section-${i}`} className={styles.section}>
-                <FooterSkeletonItem size='big' isNightTheme={isNightTheme} />
+                <FooterSkeletonItem
+                  key={`skeleton-item-${i}`}
+                  size='big'
+                  isNightTheme={isNightTheme}
+                />
 
                 {[...Array(LINKS_SIZE)].map((_n, j: number) => (
                   <FooterSkeletonItem
+                    key={`skeleton-item-${j}`}
                     size='medium'
                     isNightTheme={isNightTheme}
                   />

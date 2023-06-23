@@ -1,0 +1,83 @@
+@keyframes skeleton-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.footerSkeletonItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+
+  .item {
+    animation: skeleton-pulse 1.5s ease-in-out 0.5s infinite;
+    background-color: rgba(26, 26, 26, 0.11);
+
+    &.big {
+      height: 14px;
+      width: 70%;
+    }
+
+    &.medium {
+      height: 12px;
+    }
+
+    &.small {
+      height: 10px;
+    }
+  }
+
+  &.big {
+    height: 20px;
+  }
+
+  &.medium {
+    height: 14px;
+  }
+
+  &.small {
+    height: 12px;
+  }
+
+  &.night {
+    .item {
+      background-color: rgba(242, 242, 242, 0.11);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .item {
+      &.big {
+        height: 16px;
+        width: 70%;
+      }
+
+      &.medium {
+        height: 14px;
+      }
+
+      &.small {
+        height: 12px;
+      }
+    }
+
+    &.big {
+      height: 24px;
+    }
+
+    &.medium {
+      height: 20px;
+    }
+
+    &.small {
+      height: 14px;
+    }
+  }
+}

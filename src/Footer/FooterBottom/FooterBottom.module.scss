@@ -9,7 +9,7 @@
   gap: 8px;
 
   a {
-    color: #999;
+    color: #666;
     font-size: 12px;
     line-height: 14px;
   }
@@ -30,7 +30,7 @@
     height: 19px;
 
     > span {
-      color: #999;
+      color: #666;
       font-family: Roboto;
       font-size: 12px;
       font-weight: 500;
@@ -41,12 +41,12 @@
 
   &.night {
     a {
-      color: #808080;
+      color: #999;
     }
 
     .bottomLinks {
       > span {
-        color: #808080;
+        color: #999;
       }
     }
   }

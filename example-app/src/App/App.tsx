@@ -20,7 +20,7 @@ export const App = () => {
         <section>Body</section>
       </main>
       <Footer
-        url='https://smartforcecdnprod.blob.core.usgovcloudapi.net/smartforce/common/footer.json'
+        url='https://smartforcecdndev.blob.core.usgovcloudapi.net/smartforce/common/footer.json'
         theme={isNightMode ? 'night' : 'day'}
       />
     </div>

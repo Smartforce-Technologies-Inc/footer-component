@@ -20,7 +20,7 @@ export const Footer = ({
   className = '',
   hideSections = false,
   theme = 'day'
-}: FooterProps): React.ReactElement<{}> => {
+}: FooterProps): React.ReactElement<FooterProps> => {
   const [config, setConfig] = useState<FooterConfig>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -50,7 +50,11 @@ export const Footer = ({
             <Fragment>
               <div className={styles.sections}>
                 {config.sections.map((section: Section) => (
-                  <FooterSection key={section.title} section={section} />
+                  <FooterSection
+                    key={section.title}
+                    section={section}
+                    theme={theme}
+                  />
                 ))}
               </div>
 
